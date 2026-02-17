@@ -2,7 +2,9 @@
 /**
  * Analyst chart dialog: date filter, search, chart type (Bar / Line / Doughnut), and download.
  * Bind filter state from parent; chart updates live when parent updates chart data.
+ * Responsive: full-width dialog and stacked filters on mobile.
  */
+import { useDisplay } from 'vuetify'
 
 /** Matches ChartBar data prop */
 interface BarChartData {
@@ -48,7 +50,10 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
+const { mobile } = useDisplay()
 const chartCanvasWrapper = ref<HTMLElement | null>(null)
+
+const analystDialogMaxWidth = computed(() => (mobile.value ? '95vw' : '70vw'))
 
 const dialogTitle = computed(() => {
   if (props.chartType === 'bar') return t('common.chart.titleBar')
@@ -79,64 +84,104 @@ function downloadChart() {
 </script>
 
 <template>
-  <AppDialog :model-value="modelValue" :title="dialogTitle" max-width="70vw" content-class=" mx-auto"
-    @update:model-value="emit('update:modelValue', $event)">
-    <!-- Filters: date range + search (parent handles doSearch on year change) -->
-    <div class="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-sm border border-neutral-200 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-800 p-3">
-      <div class="flex flex-row items-center gap-3">
-      <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">{{ t('common.chart.date') }}</span>
-      <v-select :model-value="yearFrom" :items="yearOptions" density="compact" hide-details :placeholder="t('common.pages.yearFrom')"
-        class="max-w-[100px]" item-title="title" item-value="value" @update:model-value="onYearFrom($event)" />
-      <span class="text-neutral-400 dark:text-neutral-500">~</span>
-      <v-select :model-value="yearTo" :items="yearOptions" density="compact" hide-details :placeholder="t('common.pages.yearTo')"
-        class="max-w-[100px]" item-title="title" item-value="value" @update:model-value="onYearTo($event)" />
-    </div>
-      <!-- Chart type: Bar | Line | Doughnut -->
-      <div class=" flex gap-2 ">
-        <v-btn  :variant="chartType === 'bar' ? 'flat' : 'tonal'"
-          :color="chartType === 'bar' ? 'primary' : undefined" class="rounded-sm"
-          @click="emit('update:chartType', 'bar')">
+  <AppDialog
+    :model-value="modelValue"
+    :title="dialogTitle"
+    :max-width="analystDialogMaxWidth"
+    content-class="analyst-dialog-content"
+    @update:model-value="emit('update:modelValue', $event)"
+  >
+    <!-- Filters: stack on mobile, row on sm+ -->
+    <div class="analyst-filters mb-4 flex flex-col gap-3 rounded-sm border border-neutral-200 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-800 p-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">{{ t('common.chart.date') }}</span>
+        <div class="flex items-center gap-2">
+          <v-select
+            :model-value="yearFrom"
+            :items="yearOptions"
+            density="compact"
+            hide-details
+            :placeholder="t('common.pages.yearFrom')"
+            class="min-w-0 max-w-[100px] shrink-0"
+            item-title="title"
+            item-value="value"
+            @update:model-value="onYearFrom($event)"
+          />
+          <span class="shrink-0 text-neutral-400 dark:text-neutral-500">~</span>
+          <v-select
+            :model-value="yearTo"
+            :items="yearOptions"
+            density="compact"
+            hide-details
+            :placeholder="t('common.pages.yearTo')"
+            class="min-w-0 max-w-[100px] shrink-0"
+            item-title="title"
+            item-value="value"
+            @update:model-value="onYearTo($event)"
+          />
+        </div>
+      </div>
+      <!-- Chart type: wrap on mobile -->
+      <div class="flex flex-wrap gap-2">
+        <v-btn
+          :variant="chartType === 'bar' ? 'flat' : 'tonal'"
+          :color="chartType === 'bar' ? 'primary' : undefined"
+          size="small"
+          class="rounded-sm shrink-0"
+          @click="emit('update:chartType', 'bar')"
+        >
           <v-icon start size="small">mdi-chart-bar</v-icon>
           {{ t('common.chart.bar') }}
         </v-btn>
-        <v-btn  :variant="chartType === 'line' ? 'flat' : 'tonal'"
-          :color="chartType === 'line' ? 'primary' : undefined" class="rounded-sm"
-          @click="emit('update:chartType', 'line')">
+        <v-btn
+          :variant="chartType === 'line' ? 'flat' : 'tonal'"
+          :color="chartType === 'line' ? 'primary' : undefined"
+          size="small"
+          class="rounded-sm shrink-0"
+          @click="emit('update:chartType', 'line')"
+        >
           <v-icon start size="small">mdi-chart-line</v-icon>
           {{ t('common.chart.line') }}
         </v-btn>
-        <v-btn  :variant="chartType === 'doughnut' ? 'flat' : 'tonal'"
-          :color="chartType === 'doughnut' ? 'primary' : undefined" class="rounded-sm"
-          @click="emit('update:chartType', 'doughnut')">
-          <v-icon start size="small">mdi-chart-donut</v-icon>         {{ t('common.chart.doughnut') }}
+        <v-btn
+          :variant="chartType === 'doughnut' ? 'flat' : 'tonal'"
+          :color="chartType === 'doughnut' ? 'primary' : undefined"
+          size="small"
+          class="rounded-sm shrink-0"
+          @click="emit('update:chartType', 'doughnut')"
+        >
+          <v-icon start size="small">mdi-chart-donut</v-icon>
+          {{ t('common.chart.doughnut') }}
         </v-btn>
       </div>
     </div>
 
-
-
-    <div ref="chartCanvasWrapper" class="min-h-[400px] w-[70vw]">
-      <div v-if="chartType === 'bar'" class="h-[400px] w-full">
+    <div ref="chartCanvasWrapper" class="analyst-chart-wrapper min-h-[280px] w-full sm:min-h-[400px]">
+      <div v-if="chartType === 'bar'" class="h-[280px] w-full sm:h-[400px]">
         <ChartBar :data="barChartData" />
       </div>
-      <div v-if="chartType === 'line'" class="h-[400px] w-full">
+      <div v-if="chartType === 'line'" class="h-[280px] w-full sm:h-[400px]">
         <ChartLine :data="lineChartData" />
       </div>
-      <div v-if="chartType === 'doughnut'" class="h-[400px] w-full">
+      <div v-if="chartType === 'doughnut'" class="h-[280px] w-full sm:h-[400px]">
         <ChartDoughnut :data="doughnutChartData" />
       </div>
     </div>
 
     <template #headerActions>
-      <div class="flex shrink-0 items-center gap-2">
-        <v-btn class="rounded-sm bg-[#2A5A7F] dark:bg-[#3d7ba8] text-white hover:opacity-90" @click="downloadChart">
+      <div class="flex shrink-0 items-center gap-1 sm:gap-2">
+        <v-btn
+          size="small"
+          class="rounded-sm bg-[#2A5A7F] dark:bg-[#3d7ba8] text-white hover:opacity-90 shrink-0"
+          @click="downloadChart"
+        >
           <v-icon start size="small">mdi-download</v-icon>
-          {{ t('common.chart.download') }}
+          <span class="hidden sm:inline">{{ t('common.chart.download') }}</span>
         </v-btn>
         <v-btn
           icon
           size="small"
-          class="rounded-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+          class="rounded-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 shrink-0"
           @click="emit('update:modelValue', false)"
         >
           <v-icon icon="mdi-close" size="small" />
