@@ -1,0 +1,202 @@
+[
+  {
+    "id": "2022",
+    "period": "2022",
+    "domesticExport": 980,
+    "reExport": 120,
+    "totalExport": 1100,
+    "totalImport": 1250,
+    "totalTradeVolume": 2350,
+    "balance": -150
+  },
+  {
+    "id": "2023",
+    "period": "2023",
+    "domesticExport": 1120,
+    "reExport": 180,
+    "totalExport": 1300,
+    "totalImport": 1405,
+    "totalTradeVolume": 2705,
+    "balance": -105
+  },
+  {
+    "id": "2024",
+    "period": "2024",
+    "domesticExport": 1250,
+    "reExport": 210,
+    "totalExport": 1460,
+    "totalImport": 1510,
+    "totalTradeVolume": 2970,
+    "balance": -50
+  },
+  {
+    "id": "2025",
+    "period": "2025",
+    "domesticExport": 1410,
+    "reExport": 240,
+    "totalExport": 1650,
+    "totalImport": 1620,
+    "totalTradeVolume": 3270,
+    "balance": 30
+  },
+  {
+    "id": "2026",
+    "period": "2026",
+    "domesticExport": 1560,
+    "reExport": 260,
+    "totalExport": 1820,
+    "totalImport": 1750,
+    "totalTradeVolume": 3570,
+    "balance": 70
+  },
+  {
+    "id": "2022",
+    "period": "2022",
+    "domesticExport": 980,
+    "reExport": 120,
+    "totalExport": 1100,
+    "totalImport": 1250,
+    "totalTradeVolume": 2350,
+    "balance": -150
+  },
+  {
+    "id": "2023",
+    "period": "2023",
+    "domesticExport": 1120,
+    "reExport": 180,
+    "totalExport": 1300,
+    "totalImport": 1405,
+    "totalTradeVolume": 2705,
+    "balance": -105
+  },
+  {
+    "id": "2024",
+    "period": "2024",
+    "domesticExport": 1250,
+    "reExport": 210,
+    "totalExport": 1460,
+    "totalImport": 1510,
+    "totalTradeVolume": 2970,
+    "balance": -50
+  },
+  {
+    "id": "2025",
+    "period": "2025",
+    "domesticExport": 1410,
+    "reExport": 240,
+    "totalExport": 1650,
+    "totalImport": 1620,
+    "totalTradeVolume": 3270,
+    "balance": 30
+  },
+  {
+    "id": "2026",
+    "period": "2026",
+    "domesticExport": 1560,
+    "reExport": 260,
+    "totalExport": 1820,
+    "totalImport": 1750,
+    "totalTradeVolume": 3570,
+    "balance": 70
+  },
+  {
+    "id": "2022",
+    "period": "2022",
+    "domesticExport": 980,
+    "reExport": 120,
+    "totalExport": 1100,
+    "totalImport": 1250,
+    "totalTradeVolume": 2350,
+    "balance": -150
+  },
+  {
+    "id": "2023",
+    "period": "2023",
+    "domesticExport": 1120,
+    "reExport": 180,
+    "totalExport": 1300,
+    "totalImport": 1405,
+    "totalTradeVolume": 2705,
+    "balance": -105
+  },
+  {
+    "id": "2024",
+    "period": "2024",
+    "domesticExport": 1250,
+    "reExport": 210,
+    "totalExport": 1460,
+    "totalImport": 1510,
+    "totalTradeVolume": 2970,
+    "balance": -50
+  },
+  {
+    "id": "2025",
+    "period": "2025",
+    "domesticExport": 1410,
+    "reExport": 240,
+    "totalExport": 1650,
+    "totalImport": 1620,
+    "totalTradeVolume": 3270,
+    "balance": 30
+  },
+  {
+    "id": "2026",
+    "period": "2026",
+    "domesticExport": 1560,
+    "reExport": 260,
+    "totalExport": 1820,
+    "totalImport": 1750,
+    "totalTradeVolume": 3570,
+    "balance": 70
+  },
+  {
+    "id": "2022",
+    "period": "2022",
+    "domesticExport": 980,
+    "reExport": 120,
+    "totalExport": 1100,
+    "totalImport": 1250,
+    "totalTradeVolume": 2350,
+    "balance": -150
+  },
+  {
+    "id": "2023",
+    "period": "2023",
+    "domesticExport": 1120,
+    "reExport": 180,
+    "totalExport": 1300,
+    "totalImport": 1405,
+    "totalTradeVolume": 2705,
+    "balance": -105
+  },
+  {
+    "id": "2024",
+    "period": "2024",
+    "domesticExport": 1250,
+    "reExport": 210,
+    "totalExport": 1460,
+    "totalImport": 1510,
+    "totalTradeVolume": 2970,
+    "balance": -50
+  },
+  {
+    "id": "2025",
+    "period": "2025",
+    "domesticExport": 1410,
+    "reExport": 240,
+    "totalExport": 1650,
+    "totalImport": 1620,
+    "totalTradeVolume": 3270,
+    "balance": 30
+  },
+  {
+    "id": "2026",
+    "period": "2026",
+    "domesticExport": 1560,
+    "reExport": 260,
+    "totalExport": 1820,
+    "totalImport": 1750,
+    "totalTradeVolume": 3570,
+    "balance": 70
+  }
+]

@@ -1,0 +1,37 @@
+[
+  { "id": "2026-01-01|01", "period": "2026-01-01", "hsCode": "01", "hsDescription": "Live animals", "value": 145 },
+  { "id": "2026-01-05|03", "period": "2026-01-05", "hsCode": "03", "hsDescription": "Fish and crustaceans", "value": 188 },
+  { "id": "2026-01-10|04", "period": "2026-01-10", "hsCode": "04", "hsDescription": "Dairy products", "value": 220 },
+  { "id": "2026-01-15|05", "period": "2026-01-15", "hsCode": "05", "hsDescription": "Animal products n.e.s", "value": 175 },
+  { "id": "2026-01-20|06", "period": "2026-01-20", "hsCode": "06", "hsDescription": "Live trees and plants", "value": 205 },
+
+  { "id": "2026-02-01|07", "period": "2026-02-01", "hsCode": "07", "hsDescription": "Vegetables", "value": 260 },
+  { "id": "2026-02-06|08", "period": "2026-02-06", "hsCode": "08", "hsDescription": "Edible fruits and nuts", "value": 310 },
+  { "id": "2026-02-12|09", "period": "2026-02-12", "hsCode": "09", "hsDescription": "Coffee and spices", "value": 190 },
+  { "id": "2026-02-18|11", "period": "2026-02-18", "hsCode": "11", "hsDescription": "Milling products", "value": 230 },
+  { "id": "2026-02-25|12", "period": "2026-02-25", "hsCode": "12", "hsDescription": "Oil seeds", "value": 275 },
+
+  { "id": "2026-03-03|13", "period": "2026-03-03", "hsCode": "13", "hsDescription": "Lac, gums, resins", "value": 180 },
+  { "id": "2026-03-09|14", "period": "2026-03-09", "hsCode": "14", "hsDescription": "Vegetable plaiting materials", "value": 160 },
+  { "id": "2026-03-15|15", "period": "2026-03-15", "hsCode": "15", "hsDescription": "Animal or vegetable fats", "value": 340 },
+  { "id": "2026-03-21|16", "period": "2026-03-21", "hsCode": "16", "hsDescription": "Prepared meat or fish", "value": 295 },
+  { "id": "2026-03-28|17", "period": "2026-03-28", "hsCode": "17", "hsDescription": "Sugars and confectionery", "value": 210 },
+
+  { "id": "2026-04-02|18", "period": "2026-04-02", "hsCode": "18", "hsDescription": "Cocoa products", "value": 250 },
+  { "id": "2026-04-08|19", "period": "2026-04-08", "hsCode": "19", "hsDescription": "Cereal preparations", "value": 270 },
+  { "id": "2026-04-14|20", "period": "2026-04-14", "hsCode": "20", "hsDescription": "Vegetable preparations", "value": 285 },
+  { "id": "2026-04-20|21", "period": "2026-04-20", "hsCode": "21", "hsDescription": "Misc edible preparations", "value": 315 },
+  { "id": "2026-04-27|22", "period": "2026-04-27", "hsCode": "22", "hsDescription": "Beverages and spirits", "value": 360 },
+
+  { "id": "2026-05-04|23", "period": "2026-05-04", "hsCode": "23", "hsDescription": "Food industry residues", "value": 175 },
+  { "id": "2026-05-10|24", "period": "2026-05-10", "hsCode": "24", "hsDescription": "Tobacco", "value": 290 },
+  { "id": "2026-05-16|25", "period": "2026-05-16", "hsCode": "25", "hsDescription": "Salt, sulphur, earths", "value": 410 },
+  { "id": "2026-05-22|26", "period": "2026-05-22", "hsCode": "26", "hsDescription": "Ores and slag", "value": 450 },
+  { "id": "2026-05-29|27", "period": "2026-05-29", "hsCode": "27", "hsDescription": "Mineral fuels", "value": 520 },
+
+  { "id": "2026-06-03|28", "period": "2026-06-03", "hsCode": "28", "hsDescription": "Inorganic chemicals", "value": 310 },
+  { "id": "2026-06-09|29", "period": "2026-06-09", "hsCode": "29", "hsDescription": "Organic chemicals", "value": 335 },
+  { "id": "2026-06-15|30", "period": "2026-06-15", "hsCode": "30", "hsDescription": "Pharmaceutical products", "value": 380 },
+  { "id": "2026-06-21|31", "period": "2026-06-21", "hsCode": "31", "hsDescription": "Fertilizers", "value": 260 },
+  { "id": "2026-06-28|32", "period": "2026-06-28", "hsCode": "32", "hsDescription": "Tanning extracts and dyes", "value": 295 }
+]

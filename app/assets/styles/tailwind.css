@@ -1,0 +1,86 @@
+/* =============================================================================
+   Tailwind CSS – used together with Vuetify
+   Load order (nuxt.config): vuetify.scss → index.scss → tailwind.css (last wins)
+   Use Vuetify for UI components; use Tailwind for layout, spacing, colors, typography.
+   You can add Tailwind classes to Vuetify components: <v-btn class="rounded-lg p-4" />
+   ============================================================================= */
+@import 'tailwindcss';
+
+@source "../../**/*.{vue,js,ts,jsx,tsx,html}";
+
+/* Class-based dark mode: .dark on root or body (body.dark for teleported overlays) */
+@custom-variant dark (&:where(.dark, .dark *, body.dark *));
+
+/* Theme aligned with Vuetify (primary #2A5A7F, secondary #F7D16A) */
+@theme {
+  --color-primary: #2a5a7f;
+  --color-primary-75: rgba(42, 90, 127, 0.75);
+  --color-primary2: #234a6b;
+  --color-primary2-75: rgba(35, 74, 107, 0.75);
+  --color-secondary: #f7d16a;
+  --color-secondary-75: rgba(247, 209, 106, 0.75);
+  --color-secondary2: #2a5a7f;
+  --color-secondary2-75: rgba(42, 90, 127, 0.75);
+  --color-accent: #f7d16a;
+  --color-accent-75: rgba(247, 209, 106, 0.75);
+  --color-info: #2a5a7f;
+  --color-info-75: rgba(42, 90, 127, 0.75);
+  --color-warning: #f7d16a;
+  --color-warning-75: rgba(247, 209, 106, 0.75);
+  --color-error: #c62828;
+  --color-error-75: rgba(198, 40, 40, 0.75);
+  --color-success: #2a5a7f;
+  --color-success-75: rgba(42, 90, 127, 0.75);
+  --color-light: #e3e3e3;
+  --color-light-75: rgba(227, 227, 227, 0.75);
+  --color-dark: #333333;
+  --color-dark-75: rgba(51, 51, 51, 0.75);
+  --color-white: #ffffff;
+  --color-muted100: #f5f5f5;
+  --color-muted100-75: rgba(245, 245, 245, 0.75);
+  --color-muted: #e3e3e3;
+  --color-muted-75: rgba(227, 227, 227, 0.75);
+  --color-muted300: #bdbdbd;
+  --color-muted300-75: rgba(189, 189, 189, 0.75);
+  --color-muted400: #e3e3e3;
+  --color-muted400-75: rgba(227, 227, 227, 0.75);
+  --color-muted700: #333333;
+  --color-muted700-75: rgba(51, 51, 51, 0.75);
+  --color-disabled: #9e9e9e;
+  --color-disabled-75: rgba(158, 158, 158, 0.75);
+
+  --color-trade-import: var(--color-primary);
+  --color-trade-export: var(--color-success);
+  --color-trade-volume: var(--color-primary);
+  --color-trade-balance: var(--color-dark);
+}
+
+/* Keep app font after Tailwind preflight (Tailwind loads after index.scss) */
+@layer base {
+  html,
+  body {
+    font-family: "Siemreap", sans-serif;
+  }
+}
+
+/* Dark mode: inputs and Vuetify fields use dark background and light text everywhere */
+.dark .v-field,
+body.dark .v-field {
+  background-color: rgb(38 38 38 / 0.6) !important;
+}
+.dark .v-field__input,
+body.dark .v-field__input,
+.dark .v-field input,
+body.dark .v-field input {
+  color: #e5e5e5 !important;
+}
+.dark .v-field__input::placeholder,
+body.dark .v-field__input::placeholder,
+.dark .v-field input::placeholder,
+body.dark .v-field input::placeholder {
+  color: rgb(163 163 163) !important;
+}
+.dark .v-field .v-icon,
+body.dark .v-field .v-icon {
+  color: rgb(163 163 163) !important;
+}

@@ -1,0 +1,16 @@
+// =============================================================================
+// Global styles entry – used by Nuxt (css: ['~/assets/styles/index.scss'])
+// @use must come before any @import or other rules.
+// =============================================================================
+
+@use './scss/variables';
+@use './scss/reset';
+@use './scss/siemreap-font';
+@use './scss/global';
+@use './scss/layout';
+@use './scss/button';
+@use './scss/utilities';
+@use './scss/components';
+
+@import '@mdi/font/css/materialdesignicons.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';

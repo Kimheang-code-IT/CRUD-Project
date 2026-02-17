@@ -1,0 +1,6 @@
+export { BaseRepository } from './BaseRepository'
+export { TotalTradeRepository } from './TotalTradeRepository'
+export { SitcRepository } from './SitcRepository'
+export { PartnerCountryRepository } from './PartnerCountryRepository'
+export { ModeOfTransportRepository } from './ModeOfTransportRepository'
+export { HsCodeRepository } from './HsCodeRepository'

@@ -1,0 +1,70 @@
+// =============================================================================
+// Global styles – body, scrollbar, links, app shell height
+// =============================================================================
+
+@use 'variables' as *;
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  background-clip: content-box;
+  min-height: 28px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-dark;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $text-base;
+  font-weight: $font-medium;
+  color: $accent;
+  background-color: $white;
+}
+
+p {
+  white-space: normal;
+}
+
+a {
+  color: $accent;
+  transition: color $transition-slow, background-color $transition-base;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+
+    svg {
+      color: $primary;
+    }
+  }
+
+  &.router-link-exact-active:not(.home) {
+    color: $primary;
+    text-decoration: none;
+
+    svg {
+      color: $primary;
+    }
+  }
+}
+
+/* Full-height app shell (Vue/Nuxt + Vuetify) */
+html,
+body,
+#__nuxt,
+.v-application,
+.v-main {
+  height: 100% !important;
+}

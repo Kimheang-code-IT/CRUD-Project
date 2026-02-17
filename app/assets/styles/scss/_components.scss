@@ -1,0 +1,50 @@
+// =============================================================================
+// Shared component styles – AppBar, Sidebar, Dialog, Table
+// Use for global overrides so components don’t need scoped CSS
+// =============================================================================
+
+@use 'variables' as *;
+
+.app-bar-icon-btn .v-icon,
+.app-bar-search-btn .v-icon,
+.app-bar-search-btn,
+.app-bar-search-btn span,
+.app-bar-search-btn kbd,
+.app-bar-lang-btn,
+.app-bar-lang-btn span {
+  color: $white !important;
+}
+
+.app-bar-icon-btn:hover,
+.app-bar-search-btn:hover,
+.app-bar-lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+// Sidebar – blue theme, white text (when using .sidebar-blue class)
+.sidebar-blue .v-list,
+.sidebar-blue .v-list-item {
+  background: transparent !important;
+}
+
+.sidebar-blue .v-list-item:hover,
+.sidebar-blue .v-list-item.v-list-item--active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.sidebar-blue .v-list-item,
+.sidebar-blue .v-list-item__content,
+.sidebar-blue .v-list-item-title {
+  color: $white !important;
+}
+
+.sidebar-blue .v-icon {
+  color: $white !important;
+  opacity: 1;
+}
+
+// Dialog – consistent radius and shadow
+.v-dialog .v-overlay__content {
+  align-items: flex-start;
+  justify-content: center;
+}

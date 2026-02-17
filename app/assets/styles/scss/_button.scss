@@ -1,0 +1,8 @@
+// =============================================================================
+// Buttons – global Vuetify overrides (use Tailwind for primary/secondary styles)
+// =============================================================================
+
+.v-btn {
+  text-transform: none !important;
+  letter-spacing: normal;
+}

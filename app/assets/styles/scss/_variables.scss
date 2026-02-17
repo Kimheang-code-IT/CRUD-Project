@@ -1,0 +1,90 @@
+// =============================================================================
+// Design tokens – single source of truth for colors, spacing, typography
+// Use in SCSS: $primary, $spacing-md. In CSS/HTML: var(--color-primary)
+// =============================================================================
+
+// Brand colors (GDCE)
+$primary: #2a5a7f;
+$primary-dark: #234a6b;
+$primary-75: rgba(42, 90, 127, 0.75);
+$secondary: #f7d16a;
+$secondary-75: rgba(247, 209, 106, 0.75);
+$accent: #f2a530;
+
+// Semantic
+$success: #2a5a7f;
+$warning: #f7d16a;
+$error: #c62828;
+$info: #2a5a7f;
+
+// Neutrals
+$white: #ffffff;
+$black: #000000;
+$dark: #333333;
+$light: #e3e3e3;
+$muted: #e3e3e3;
+$muted-100: #f5f5f5;
+$muted-300: #bdbdbd;
+$muted-700: #333333;
+$disabled: #9e9e9e;
+
+// Spacing scale (4px base)
+$spacing-xs: 0.25rem;  // 4px
+$spacing-sm: 0.5rem;   // 8px
+$spacing-md: 1rem;     // 16px
+$spacing-lg: 1.5rem;   // 24px
+$spacing-xl: 2rem;     // 32px
+$spacing-2xl: 2.5rem;  // 40px
+
+// Typography (Siemreap = Google Font for EN + Khmer)
+$font-sans: "Siemreap", sans-serif;
+$font-display: "Siemreap", sans-serif;
+$text-base: 1rem;
+$text-sm: 0.875rem;
+$text-xs: 0.75rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+// Borders
+$radius-sm: 0.25rem;
+$radius-md: 0.375rem;
+$radius-lg: 0.5rem;
+$radius-xl: 0.75rem;
+$radius-2xl: 1rem;
+$border-width: 1px;
+$border-color: rgba(0, 0, 0, 0.08);
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-base: 200ms ease;
+$transition-slow: 300ms ease;
+
+// Z-index scale
+$z-dropdown: 10;
+$z-sticky: 20;
+$z-dialog: 100;
+$z-toast: 200;
+
+// Export as CSS custom properties for use in Vue/HTML and Tailwind alignment
+:root {
+  --color-primary: #{$primary};
+  --color-primary-dark: #{$primary-dark};
+  --color-secondary: #{$secondary};
+  --color-accent: #{$accent};
+  --color-success: #{$success};
+  --color-warning: #{$warning};
+  --color-error: #{$error};
+  --color-white: #{$white};
+  --color-dark: #{$dark};
+  --color-muted: #{$muted};
+  --color-muted-100: #{$muted-100};
+  --font-sans: #{$font-sans};
+  --font-display: #{$font-display};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --transition-base: #{$transition-base};
+}

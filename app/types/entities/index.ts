@@ -1,0 +1,6 @@
+export type { IEntity } from './IEntity'
+export type { ITotalTradeItem } from './TotalTrade'
+export type { ISitcItem } from './Sitc'
+export type { IPartnerCountryItem } from './PartnerCountry'
+export type { IModeOfTransportItem } from './ModeOfTransport'
+export type { IHsCodeItem } from './HsCode'
