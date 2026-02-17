@@ -367,7 +367,7 @@ watch(() => store.items, () => doSearch(), { deep: true })
 
     <!-- Add/Edit dialog -->
     <AppCrudDialog v-model="dialog" entity-name="SITC" :is-edit="!!editingItem" :max-width="560" @save="save">
-      <div class="crud-form-scroll overflow-x-auto pb-2 -webkit-overflow-scrolling-touch px-1">
+      <div class="crud-form-scroll overflow-x-auto pt-2 -webkit-overflow-scrolling-touch px-1">
         <div class="min-w-[280px] space-y-3 pr-2">
           <v-text-field
             v-model="form.period"
