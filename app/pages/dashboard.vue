@@ -55,8 +55,6 @@ const kpiBalance = computed(() => {
   const s = sum < 0 ? `-${Math.abs(sum).toLocaleString()}` : sum.toLocaleString()
   return s
 })
-const kpiRecords = computed(() => store.items.length.toLocaleString())
-
 // Chart 1: Export & Import (bar) — last 12 periods
 const revenueSalesData = computed(() => {
   const labels = last12.value.map((x) => x.period)
@@ -140,29 +138,28 @@ onMounted(async () => {
 
 <template>
   <div class="dashboard-page flex min-h-0 min-w-0 flex-col gap-6">
-    <!-- Summary row: use SummaryCard like other pages -->
-    <div class=" min-w-0 shrink-0">
-      <div class="grid w-full grid-cols-2 gap-2 md:grid-cols-5">
+    <!-- Summary row: 4 cards only, responsive -->
+    <div class="min-w-0 shrink-0">
+      <div class="dashboard-summary-grid grid w-full gap-2 sm:gap-3">
         <SummaryCard :title="t('common.dashboard.kpiTotalExport')" :value="kpiTotalExport" icon="mdi-export" />
         <SummaryCard :title="t('common.dashboard.kpiTotalImport')" :value="kpiTotalImport" icon="mdi-import" />
         <SummaryCard :title="t('common.dashboard.kpiTradeVolume')" :value="kpiTradeVolume" icon="mdi-chart-box" />
         <SummaryCard :title="t('common.dashboard.kpiBalance')" :value="kpiBalance" icon="mdi-scale-balance" />
-        <SummaryCard :title="t('common.dashboard.kpiRecords')" :value="kpiRecords" icon="mdi-format-list-numbered" />
       </div>
     </div>
 
-    <!-- Charts: 2x2 grid with 3px gap — Bar, Line, Top 10 bar, Doughnut -->
+    <!-- Charts: responsive 1 col mobile, 2x2 on md+ -->
     <div class="dashboard-charts-grid min-w-0">
-      <ChartCard :title="t('common.dashboard.chartRevenueSales')" chart-height="250px">
+      <ChartCard :title="t('common.dashboard.chartRevenueSales')" chart-height="250px" class="dashboard-chart-card">
         <ChartBar :data="revenueSalesData" :options="chartDefaults" />
       </ChartCard>
-      <ChartCard :title="t('common.dashboard.chartVolumeOverTime')" chart-height="250px">
+      <ChartCard :title="t('common.dashboard.chartVolumeOverTime')" chart-height="250px" class="dashboard-chart-card">
         <ChartLine :data="volumeOverTimeData" :options="chartDefaults" />
       </ChartCard>
-      <ChartCard :title="t('common.dashboard.chartTopByValue')" chart-height="250px">
+      <ChartCard :title="t('common.dashboard.chartTopByValue')" chart-height="250px" class="dashboard-chart-card">
         <ChartBar :data="topByValueData" :options="topByValueOptions" />
       </ChartCard>
-      <ChartCard :title="t('common.dashboard.chartExportByPeriod')" chart-height="250px">
+      <ChartCard :title="t('common.dashboard.chartExportByPeriod')" chart-height="250px" class="dashboard-chart-card">
         <ChartDoughnut :data="exportByPeriodData" :options="doughnutOptions" />
       </ChartCard>
     </div>
@@ -174,11 +171,29 @@ onMounted(async () => {
   position: relative;
 }
 
+/* Summary: 2 cols mobile, 4 cols sm+ (one row of 4) */
+.dashboard-summary-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 640px) {
+  .dashboard-summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Charts: 1 col mobile, 2x2 from md */
 .dashboard-charts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .dashboard-charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+  }
 }
 </style>

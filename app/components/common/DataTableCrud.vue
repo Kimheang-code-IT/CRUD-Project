@@ -52,14 +52,14 @@ const tableWrapperClass =
 
 <template>
   <v-card
-    class="min-w-0 overflow-y-hidden overflow-x-auto"
+    class="data-table-card w-full min-w-0 overflow-y-hidden overflow-x-auto"
     variant="flat"
     elevation="0"
   >
     <div class="flex flex-wrap items-center gap-2 px-1">
       <slot name="toolbar" />
     </div>
-    <div :class="tableWrapperClass" class="data-table-fixed-header min-w-max shrink-0">
+    <div :class="tableWrapperClass" class="data-table-fixed-header data-table-scroll-x min-w-max w-full shrink-0 overflow-x-auto">
       <v-data-table
         v-model="selected"
         :headers="(headers as any)"
@@ -99,8 +99,16 @@ const tableWrapperClass =
 </template>
 
 <style scoped>
-/* Table keeps content width so wrapper can scroll horizontally */
+/* Horizontal scroll: card and inner wrapper both allow x scroll on all devices */
+.data-table-card {
+  -webkit-overflow-scrolling: touch;
+}
+.data-table-scroll-x {
+  -webkit-overflow-scrolling: touch;
+}
+/* Table: full width when space available; when chat open or small screen, min-width keeps content and wrapper scrolls */
 .data-table-fixed-header :deep(.v-table__wrapper > table) {
+  width: 100%;
   min-width: max-content;
 }
 /* Header fixed (no scroll); only data rows scroll inside the table area */

@@ -27,7 +27,7 @@ function onPromptKeydown(e: KeyboardEvent) {
 </script>
 
 <template>
-  <aside class="flex h-full min-h-0 w-full flex-col border-l border-[#e8eef2] dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-lg" style="min-width: 0;">
+  <aside class="chatbot-panel flex h-full min-h-0 w-full flex-col border-l border-[#e8eef2] dark:border-neutral-600 bg-white dark:bg-neutral-800 shadow-lg" style="min-width: 0;">
     <!-- Header -->
     <div class="flex shrink-0 items-center justify-between gap-2 border-b border-[#e8eef2] dark:border-neutral-600 bg-[#ebf1f5] dark:bg-neutral-700 px-4 py-3">
       <div class="flex items-center gap-2">
@@ -120,6 +120,14 @@ function onPromptKeydown(e: KeyboardEvent) {
 </template>
 
 <style scoped>
+/* Full height on all devices (mobile safe: 100dvh when fullscreen) */
+.chatbot-panel {
+  min-height: 0;
+}
+:deep(.v-app) .chatbot-panel {
+  height: 100%;
+}
+
 /* Prompt area: light text and placeholder in dark mode */
 .dark .chatbot-prompt-field :deep(.v-field__input),
 body.dark .chatbot-prompt-field :deep(.v-field__input),

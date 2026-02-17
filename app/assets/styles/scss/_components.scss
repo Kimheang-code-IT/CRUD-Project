@@ -48,3 +48,9 @@
   align-items: flex-start;
   justify-content: center;
 }
+
+// Tables – horizontal scroll on all devices (any wrapper with *table-wrapper* in class)
+[class*='table-wrapper'] {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
